@@ -21,7 +21,7 @@ void CPlayer::Initialize()
 	m_tInfo = { WINCX >> 1, WINCY - WINCY/6, 50.f, 50.f };
 	m_fSpeed = 10.f;
 	m_fDistance = 60.f;
-	m_iPlayerLife = 5000;
+	m_iPlayerLife = 100;
 	m_fAngle = 90;
 }
 
@@ -80,7 +80,7 @@ void CPlayer::Render(HDC hDC)
 
 	if (g_bHitbox)
 	{
-		HPEN hPen = CreatePen(PS_SOLID, 1, RGB(0, 191, 255)); // 1 pixel 펜 생성
+		HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0)); // 1 pixel 펜 생성
 		HPEN hOldPen = (HPEN)SelectObject(hDC, hPen); // hDC에 펜 저장
 		HBRUSH hOldBrush = (HBRUSH)SelectObject(hDC, GetStockObject(NULL_BRUSH)); //NULL브러쉬로 안쪽 투명화
 

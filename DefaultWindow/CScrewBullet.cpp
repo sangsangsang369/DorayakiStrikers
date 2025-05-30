@@ -19,8 +19,8 @@ CScrewBullet::~CScrewBullet()
 
 void CScrewBullet::Initialize()
 {
-	m_tInfo.fCX = 100.f;
-	m_tInfo.fCY = 100.f;
+	m_tInfo.fCX = 150.f;
+	m_tInfo.fCY = 130.f;
 	m_fSpeed = 6.f;
 
 
@@ -77,6 +77,18 @@ void CScrewBullet::Late_Update()
 void CScrewBullet::Render(HDC hDC)
 {
 	CRenderMgr::DorayakiRender(hDC, m_tInfo, m_tRect);
+	if (g_bHitbox)
+	{
+		HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0)); // 1 pixel 펜 생성
+		HPEN hOldPen = (HPEN)SelectObject(hDC, hPen); // hDC에 펜 저장
+		HBRUSH hOldBrush = (HBRUSH)SelectObject(hDC, GetStockObject(NULL_BRUSH)); //NULL브러쉬로 안쪽 투명화
+
+		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom); // m_tRect에서 좌표값받아와서 사각형 히트박스 생성
+
+		SelectObject(hDC, hOldPen);
+
+		DeleteObject(hPen); //펜 다쓰고 해제(메모리 누수 방지용)
+	}
 }
 
 void CScrewBullet::Release()

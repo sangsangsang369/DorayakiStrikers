@@ -84,7 +84,7 @@ void CMainGame::Update()
 		}
 	}
 
-	if (GetAsyncKeyState('P')) {
+	if (GetAsyncKeyState('P') & 0x8000) {
 
 		g_bHitbox = !g_bHitbox;
 	}

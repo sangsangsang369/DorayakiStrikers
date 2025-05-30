@@ -37,9 +37,6 @@
     <Filter Include="02. Design\01. CollisionMgr">
       <UniqueIdentifier>{577ed7e7-51a3-4916-a97b-8198a9a66358}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\03. Mouse">
-      <UniqueIdentifier>{5e2b09e4-8d28-4c5a-98d9-1220f37b2489}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02. Design\02. StageMgr">
       <UniqueIdentifier>{dc4c7d29-796d-4269-8876-4abc69d906f9}</UniqueIdentifier>
     </Filter>
@@ -99,9 +96,6 @@
     <ClInclude Include="CCollisionMgr.h">
       <Filter>02. Design\01. CollisionMgr</Filter>
     </ClInclude>
-    <ClInclude Include="CMouse.h">
-      <Filter>01. Obj\03. Mouse</Filter>
-    </ClInclude>
     <ClInclude Include="CStageMgr.h">
       <Filter>02. Design\02. StageMgr</Filter>
     </ClInclude>
@@ -151,9 +145,6 @@
     </ClCompile>
     <ClCompile Include="CCollisionMgr.cpp">
       <Filter>02. Design\01. CollisionMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="CMouse.cpp">
-      <Filter>01. Obj\03. Mouse</Filter>
     </ClCompile>
     <ClCompile Include="CStageMgr.cpp">
       <Filter>02. Design\02. StageMgr</Filter>

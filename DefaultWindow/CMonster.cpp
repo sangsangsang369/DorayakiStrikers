@@ -147,7 +147,7 @@ void CMonster::Render(HDC hDC)
 		{
 			// 레이저 끝점 계산 (화면 끝까지)
 
-			for (int i = 0; i <360; i += 30)  // 30도씩 12방향
+			for (int i = 210; i <360; i += 30)  // 30도씩 12방향
 			{
 				// 각 방향의 끝점 계산
 				int iEndX = m_tInfo.fX + 1000 * cosf(i * (PI / 180.f));
@@ -242,7 +242,18 @@ void CMonster::Render(HDC hDC)
 
 
 	}
+	if (g_bHitbox)
+	{
+		HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0)); // 1 pixel 펜 생성
+		HPEN hOldPen = (HPEN)SelectObject(hDC, hPen); // hDC에 펜 저장
+		HBRUSH hOldBrush = (HBRUSH)SelectObject(hDC, GetStockObject(NULL_BRUSH)); //NULL브러쉬로 안쪽 투명화
 
+		Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom); // m_tRect에서 좌표값받아와서 사각형 히트박스 생성
+
+		SelectObject(hDC, hOldPen);
+
+		DeleteObject(hPen); //펜 다쓰고 해제(메모리 누수 방지용)
+	}
 
 }
 

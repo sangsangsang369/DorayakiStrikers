@@ -63,7 +63,7 @@ void CMonster_Bullet::Render(HDC hDC)
 
 	if (g_bHitbox)
 	{
-		HPEN hPen = CreatePen(PS_SOLID, 1, RGB(0, 191, 255)); // 1 pixel 펜 생성
+		HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255, 0, 0)); // 1 pixel 펜 생성
 		HPEN hOldPen = (HPEN)SelectObject(hDC, hPen); // hDC에 펜 저장
 		HBRUSH hOldBrush = (HBRUSH)SelectObject(hDC, GetStockObject(NULL_BRUSH)); //NULL브러쉬로 안쪽 투명화
 

@@ -286,31 +286,24 @@ void CRenderMgr::BossMonsterMadFaceRender(HDC hDC, INFO _tInfo, RECT _tRect)
 	Ellipse(hDC, _tRect.left, _tRect.top, _tRect.right, _tRect.bottom);
 
 	//// 흰색
-	SelectObject(hDC, hBrushLightPink);
+	SelectObject(hDC, hBrushWhite);
 	Ellipse(hDC, _tRect.left + _tInfo.fCX / 12, _tRect.top + _tInfo.fCY / 8, _tRect.right - _tInfo.fCX / 12, _tRect.bottom);
 
 	// 핑크
-	SelectObject(hDC, hBrushPink);
+	SelectObject(hDC, hBrushWhite);
 	Ellipse(hDC, _tRect.left + _tInfo.fCX / 4, _tRect.top + _tInfo.fCY / 12, _tRect.right - _tInfo.fCY / 2, _tRect.bottom - _tInfo.fCY / 2);
 	Ellipse(hDC, _tRect.left + _tInfo.fCX / 2, _tRect.top + _tInfo.fCY / 12, _tRect.right - _tInfo.fCY / 4, _tRect.bottom - _tInfo.fCY / 2);
 
-	SelectObject(hDC, hBrushRed);
-	Ellipse(hDC, _tRect.left + _tInfo.fCX / 3.9, _tRect.top + _tInfo.fCY / 8, _tRect.right - _tInfo.fCY / 1.8, _tRect.bottom - _tInfo.fCY / 1.8);
-	Ellipse(hDC, _tRect.left + _tInfo.fCX / 1.8, _tRect.top + _tInfo.fCY / 8, _tRect.right - _tInfo.fCY / 3.9, _tRect.bottom - _tInfo.fCY / 1.8);
-
-	SelectObject(hDC, hBrushPink);
-	Ellipse(hDC, _tRect.left + _tInfo.fCX / 3.9, _tRect.top + _tInfo.fCY / 6, _tRect.right - _tInfo.fCY / 1.6, _tRect.bottom - _tInfo.fCY / 1.6);
-	Ellipse(hDC, _tRect.left + _tInfo.fCX / 1.6, _tRect.top + _tInfo.fCY / 6, _tRect.right - _tInfo.fCY / 3.9, _tRect.bottom - _tInfo.fCY / 1.6);
 
 	//// 검정색
-	SelectObject(hDC, hBrushRed);
-	Ellipse(hDC, _tRect.left + _tInfo.fCX / 3.8, _tRect.top + _tInfo.fCY / 4.5, _tRect.right - _tInfo.fCY / 1.5, _tRect.bottom - _tInfo.fCY / 1.5);
-	Ellipse(hDC, _tRect.left + _tInfo.fCX / 1.5, _tRect.top + _tInfo.fCY / 4.5, _tRect.right - _tInfo.fCY / 3.8, _tRect.bottom - _tInfo.fCY / 1.5);
+	SelectObject(hDC, hBrushWhite);
+	Ellipse(hDC, _tRect.left + _tInfo.fCX / 3, _tRect.top + _tInfo.fCY / 8, _tRect.right - _tInfo.fCY / 1.9, _tRect.bottom - _tInfo.fCY / 1.5);
+	Ellipse(hDC, _tRect.left + _tInfo.fCX / 1.9, _tRect.top + _tInfo.fCY / 8, _tRect.right - _tInfo.fCY / 3, _tRect.bottom - _tInfo.fCY / 1.5);
 
 	//// 흰색 다시 사용
 	SelectObject(hDC, hBrushWhite);
-	//Ellipse(hDC, _tRect.left + _tInfo.fCX / 2.7, _tRect.top + _tInfo.fCY / 6, _tRect.right - _tInfo.fCY / 1.8, _tRect.bottom - _tInfo.fCY / 1.4);
-	//Ellipse(hDC, _tRect.left + _tInfo.fCX / 1.8, _tRect.top + _tInfo.fCY / 6, _tRect.right - _tInfo.fCY / 2.7, _tRect.bottom - _tInfo.fCY / 1.4);
+	Ellipse(hDC, _tRect.left + _tInfo.fCX / 2.7, _tRect.top + _tInfo.fCY / 6, _tRect.right - _tInfo.fCY / 1.8, _tRect.bottom - _tInfo.fCY / 1.4);
+	Ellipse(hDC, _tRect.left + _tInfo.fCX / 1.8, _tRect.top + _tInfo.fCY / 6, _tRect.right - _tInfo.fCY / 2.7, _tRect.bottom - _tInfo.fCY / 1.4);
 
 	//// 입 선
 	MoveToEx(hDC, _tRect.left + _tInfo.fCX / 2, _tRect.top + _tInfo.fCY / 2.5, nullptr);
