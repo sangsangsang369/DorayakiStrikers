@@ -7,11 +7,12 @@
 
 /*Coll_CHECK : 충돌유무 확인 함수 
 최소 x좌표가 최대 x좌표보다 작거나 같음, 최대 x좌표가 최소 x좌표보다 크거나 같을경우 충돌판정 , y좌표도 동일방식*/
-
-
 bool CCollisionMgr::Coll_CHECK(const RECT& rcSrc, const RECT& rcTmp) {
 
-	return !(rcSrc.right < rcTmp.left || rcSrc.left > rcTmp.right || rcSrc.bottom < rcTmp.top || rcSrc.top > rcTmp.bottom);
+	return !(rcSrc.right < rcTmp.left || 
+			 rcSrc.left > rcTmp.right || 
+		     rcSrc.bottom < rcTmp.top || 
+		     rcSrc.top > rcTmp.bottom);
 }
 
 void CCollisionMgr::Coll_TwoObj(std::list<CObj*>& ObjA, std::list<CObj*>& ObjB) { //오브젝트 두개 충돌 검사용

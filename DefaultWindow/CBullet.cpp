@@ -67,7 +67,7 @@ void CBullet::Late_Update()
 		m_fSinAngle += 10.f;
 
 		// 사인파 오프셋
-		float fSinOffset = m_fSinWidth * cosf(m_fSinAngle * (PI / 180.f));
+		float fSinOffset = m_fSinWidth * sinf(m_fSinAngle * (PI / 180.f));
 
 		// 탄의 각도의 수직 방향인 법선 방향을 90도 더해줘서 구함
 		float normalAngle = m_fAngle + 90.f;
